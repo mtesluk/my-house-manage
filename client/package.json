@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --env.SOCKET_SERVER=http://localhost:4000 --open --mode development",
+    "build": "webpack --env.SOCKET_SERVER=https://mt-house.herokuapp.com --mode production"
   },
   "keywords": [],
   "author": "",

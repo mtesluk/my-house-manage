@@ -1,6 +1,13 @@
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+module.exports = env => {
+  const envKeys = Object.keys(env).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(env[next]);
+    return prev;
+  }, {});
+
+  return {
     module: {
       rules: [
         {
@@ -28,6 +35,8 @@ module.exports = {
         new HtmlWebPackPlugin({
           template: "./src/index.html",
           filename: "./index.html"
-        })
+        }),
+        new webpack.DefinePlugin(envKeys),
       ]
   };
+}
