@@ -5,4 +5,4 @@ WORKDIR /app
 COPY . .
 RUN npm install
 
-CMD node index.js
+CMD PORT=$PORT node index.js
