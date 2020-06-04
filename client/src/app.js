@@ -4,9 +4,9 @@ import socketIOClient from 'socket.io-client';
 import './app.css';
 import HousePlanSvg from './housePlanSvg';
 
-console.log(process.env.SOCKET_SERVER)
+
 const ENDPOINT = process.env.SOCKET_SERVER;
-const ROOM_TYPES = ['MATEUSZ', 'OUTSIDE', 'CORRIDOR', 'KITCHEN', 'LIVING_ROOM', 'MARYSIA_ROOM'];
+const ROOM_TYPES = ['MATEUSZ', 'OUTSIDE', 'CORRIDOR', 'KITCHEN', 'LIVING_ROOM', 'MARYSIA'];
 const initialTemperatures = ROOM_TYPES.reduce((sum, key) => {
   sum[key] = '';
   return sum;
@@ -37,7 +37,7 @@ const App = () => {
     }, []);
 
     return (
-      <div>
+      <div className="app">
         <HousePlanSvg {...temperatures} />
       </div>
     );

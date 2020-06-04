@@ -8,7 +8,7 @@ const ROOM_TYPES = {
   CORRIDOR: 2,
   KITCHEN: 3,
   LIVING_ROOM: 4,
-  MARYSIA_ROOM: 5,
+  MARYSIA: 5,
 };
 
 module.exports = (io) => {
